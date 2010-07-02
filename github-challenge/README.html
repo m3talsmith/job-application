@@ -1,0 +1,65 @@
+<html><head><title>Commit History for rails owned by rails</title></head><body><h1>Commit History for rails owned by rails</h1><div class='author'>  <h2>wycats (wycats)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>c1beeb406816736aa76036bb26ad895322876a90</span><br />    <span class='message'>Add CHANGELOG for new deprecation style</span></li>    <li class='commit'>Commit: <span class='id'>b1cc63c10d11af6c2767a4cb79082293b622ff4e</span><br />    <span class='message'>_snowman CHANGELOG (dobry pies)</span></li>    <li class='commit'>Commit: <span class='id'>d4c7d3fd94e5a885a6366eaeb3b908bb58ffd4db</span><br />    <span class='message'>Create a deprecation behavior that triggers a notification for deprecation notices, and make the behaviors independent of the environment names.
+
+* In Rails 2.3 apps being upgraded, you will need to add the deprecation
+  configuration to each of your environments. Failing to do so will
+  result in the same behavior as Rails 2.3, but with an outputted warning
+  to provide information on how to set up the setting.
+* New Rails 3 applications generate the setting
+* The notification style will send deprecation notices using
+  ActiveSupport::Notifications. Third-party tools can listen in to
+  these notifications to provide a streamlined view of the
+  deprecation notices occurring in your app.
+* The payload in the notification is the deprecation warning itself
+  as well as the callstack from the point that triggered the
+  notification.</span></li>  </ul></div><div class='author'>  <h2>James MacAulay (jamesmacaulay)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>16cef77d37ffe3e2cdc6f7db76b4ae59ce4cbc5b</span><br />    <span class='message'>Fix AS::MB::Chars#+ to not alter self [#4646 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Aaron Patterson (tenderlove)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>f8720a04d129668c7554c1a7270fba5418510b47</span><br />    <span class='message'>porting session.clear fix to master branch. [#5030 state:resolved]
+
+Signed-off-by: Jeremy Kemper <jeremy@bitsweat.net></span></li>    <li class='commit'>Commit: <span class='id'>3f563f169612ec340816f0a549fe9db7ff95c238</span><br />    <span class='message'>AssociationCollection#create_by_*, find_or_create_by_* work properly now. [#1108 state:resolved]
+
+Signed-off-by: Jeremy Kemper <jeremy@bitsweat.net></span></li>  </ul></div><div class='author'>  <h2>Norman Clarke (norman)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>4dbb6e3ff001bed14c64af3ddef87b3359a43505</span><br />    <span class='message'>Update Unicode database to 5.2.0. [#5011 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Wincent Colaiuta (wincent)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>52c56f9f7ec46ee39f1a6319ff4017e2492683ed</span><br />    <span class='message'>docs: note that mail() accepts arbitrary headers
+
+The documentation makes it sound like mail() only accepts a limited
+set of headers in the headers hash, but it in fact accepts any
+arbitrary headers, and there is a test ("can pass random headers in
+as a hash to mail") for it in the test suite.
+
+Signed-off-by: Wincent Colaiuta <win@wincent.com></span></li>  </ul></div><div class='author'>  <h2>Jeremy Kemper (jeremy)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>d7c1057652cfc971bb35ef09b0b1560fcd28ed70</span><br />    <span class='message'>Bump bundler dependency to 1.0.0.beta.2 or later</span></li>    <li class='commit'>Commit: <span class='id'>b07e6fdaa0aa07016d1425ada5b7f966142d0212</span><br />    <span class='message'>Support any mysql-like adapter</span></li>  </ul></div><div class='author'>  <h2>Gonçalo Silva (goncalossilva)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>68bd46ffb99282ecb589c9ed2cd0c74d0da3396e</span><br />    <span class='message'>performance tests now working accurately on 1.9, using Ruby with the GCdata patch</span></li>  </ul></div><div class='author'>  <h2>Xavier Noria (fxn)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>c63cf7bf0db708fe46a929cf57649ab5a92034af</span><br />    <span class='message'>Merge remote branch 'rails/master'</span></li>    <li class='commit'>Commit: <span class='id'>ec3bfa2ead7337fe99ff036d4b8b5ae0a321f8cd</span><br />    <span class='message'>s/escape_once/html_escape/, since html safety is the contract that now says whether something has to be escaped</span></li>    <li class='commit'>Commit: <span class='id'>cba1460a2fe2bbe1153620582a66e03cec9ba7a5</span><br />    <span class='message'>url_for no longer escapes HTML, the :escape option is also gone
+
+Rationale: url_for is just a path/URL generator, it is the responsability of the caller to escape conveniently HTML needs it, JavaScript needs different escaping, a text mail needs no escaping at all, etc.</span></li>  </ul></div><div class='author'>  <h2>José Valim (josevalim)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>0189fb76e3c38ef9a0d292135683b0d135c4a369</span><br />    <span class='message'>reload_routes! was still referencing old Rails::Application.</span></li>    <li class='commit'>Commit: <span class='id'>53b34e84762b7f2d6b641f99dadbb1eab42907ab</span><br />    <span class='message'>Avoid calls to Rails::Application since this is not the official API.
+
+Your application should *always* reference your application const (as Blog::Application) and Rails.application should be used just internally.</span></li>    <li class='commit'>Commit: <span class='id'>e596a8e14cfb1f2ca19cd20ae7e40047d4819b3e</span><br />    <span class='message'>Add the possibility to have several behaviors in AS::Deprecation.</span></li>    <li class='commit'>Commit: <span class='id'>57d750edf7c71e001ac314fa188aa1fc6292f8ab</span><br />    <span class='message'>Make relation a private method.</span></li>    <li class='commit'>Commit: <span class='id'>9ab8cfc21ab07b9a65388ce3643e5558642dbc2a</span><br />    <span class='message'>Improve the idiom used in multibyte chars a bit.</span></li>    <li class='commit'>Commit: <span class='id'>13a36902718d452b31d13f2f7aba5770e51844a9</span><br />    <span class='message'>Add missing CHANGELOG items.</span></li>    <li class='commit'>Commit: <span class='id'>06681af518036dcc84f4565b59a0dee460b01108</span><br />    <span class='message'>A couple enhancements to the router:
+
+* Allow to use the get :symbol shortcut outside resources scopes as well;
+
+* Fix a bug where :action was not being picked from given options;
+
+* Giving :as option inside a resource now changes just the relative name instead of the full name;</span></li>    <li class='commit'>Commit: <span class='id'>ccbb3bb3d87a48c8763a8afff4c9b21a9bf2539e</span><br />    <span class='message'>Clean up the logic to specify the name and path for action a bit.</span></li>    <li class='commit'>Commit: <span class='id'>0253bf425ea6fc112d8eecc6e7ea94e349cb538d</span><br />    <span class='message'>Change :notification to :notify (ht: m4n)</span></li>  </ul></div><div class='author'>  <h2>bodhi (bodhi)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>2eaae1f50b7fc34b90b2b7c83c55478b85d1130c</span><br />    <span class='message'>add note of which configuration option to set in deprecation warning message [#5012 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Cyril Mougel (shingara)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>9024545a6b019e3a2596a4194e84e77963e31b05</span><br />    <span class='message'>fix failure if behavior is not define and try use the default
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Alex Muntean ()</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>265b7c5edfe9b60d1ab547bfef569d94df05b8e9</span><br />    <span class='message'>Fix ActiveSupport::Multibyte::Chars#slice for empty strings when starting offset is negative [#4717 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Piotr Sarnacki (drogus)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>f7ba614c2db31933cbc12eda87518de3eca0228c</span><br />    <span class='message'>Unify routes naming by renaming router to routes
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Tekin (tekin)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>d7c2e52c6c04dec4e4665c8f0f9988bfe913cb15</span><br />    <span class='message'>migrations.rb requires active_support/core_ext/module/aliasing [#5008 state:committed]
+
+Signed-off-by: Xavier Noria <fxn@hashref.com></span></li>  </ul></div><div class='author'>  <h2>Paul Barry ()</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>0baf83fa18a0683d024a0e8f73f99c190a6ab0f1</span><br />    <span class='message'>Replaced statement in comment with an assertion
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>J. Pablo Fernández (pupeno)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>21957b72ea394c679d9b17e75b570cc99596322d</span><br />    <span class='message'>Test that adding an index also doesn't raise an exception.
+
+[#4809 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>James Le Cuirot (chewi)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>f3fedd7f84c25d1d99a70af1e21e20abb48f100f</span><br />    <span class='message'>Don't remove scheduled destroys when loading an association. [#4642 state:resolved]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>  </ul></div><div class='author'>  <h2>Santiago Pastorino (spastorino)</h2>  <ul class='commits'>    <li class='commit'>Commit: <span class='id'>2ef8a2b403adcee21fe1a5bfadc125b24779cd53</span><br />    <span class='message'>bump erubis version to 2.6.6 and thor version to 0.13.7
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>    <li class='commit'>Commit: <span class='id'>cb321546b7aef33fcf5466b61f79bd9198cd12b5</span><br />    <span class='message'>Time has it own implementation of xmlschema, now AMo doesn't depend on TZInfo
+
+[#4979 state:committed]
+
+Signed-off-by: José Valim <jose.valim@gmail.com></span></li>    <li class='commit'>Commit: <span class='id'>4a0c514eb48b8e5d4ceffb4817661c182c2368a3</span><br />    <span class='message'>AS json refactor, move to_json implementation to core_ext and a cleanup a bit the code</span></li>    <li class='commit'>Commit: <span class='id'>7bd00fcb7f8e7f94811387cd809480a727b61f11</span><br />    <span class='message'>We are trying to test that & escapes here not that &amp; is being escaped, also added a cosmetic change to test_link_tag_with_query_and_no_name
+
+Signed-off-by: Jeremy Kemper <jeremy@bitsweat.net></span></li>  </ul></div></div></body></html>

@@ -32,20 +32,20 @@ rescue OpenURI::HTTPError
   Process.exit!
 end
 
-commits = JSON.parse(response.read)["commits"].group_by {|commit| commit["id"]}
+commits = JSON.parse(response.read)["commits"].group_by {|commit| commit["author"]}
 
 # Start formatting the data
 html = "<html><head><title>Commit History for #{project} owned by #{user}</title></head><body>"
 
 html << "<h1>Commit History for #{project} owned by #{user}</h1>"
-html << "<div class='commits'>"
-commits.each do |id, details|
-  commit = details.first
+commits.each do |author, author_commits|
   html << "<div class='author'>"
-  html << "  <h2>#{commit['author']['name']} (#{commit['author']['login']})</h2>"
-  html << "  <ul class='commit'>"
-  html << "    <li>Commit: <span class='id'>#{id}</span><br />"
-  html << "    <span class='message'>#{commit['message']}</span></li>"
+  html << "  <h2>#{author['name']} (#{author['login']})</h2>"
+  html << "  <ul class='commits'>"
+  author_commits.each do |commit|
+    html << "    <li class='commit'>Commit: <span class='id'>#{commit['id']}</span><br />"
+    html << "    <span class='message'>#{commit['message']}</span></li>"
+  end
   html << "  </ul>"
   html << "</div>"
 end
