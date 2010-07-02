@@ -13,6 +13,6 @@ module View
   
   private
     def attributes_from_hash(attributes={})
-      return attributes.empty? ? nil : attributes.map {|key, value| "#{key}='#{value}'"}.join(" ")
+      return attributes.empty? ? nil : attributes.sort {|hash_1, hash_2| hash_1.to_s <=> hash_2.to_s}.collect {|array| "#{array[0]}='#{array[1]}'"}.join(" ")
     end
 end
