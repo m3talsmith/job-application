@@ -1,6 +1,9 @@
 require 'helper/view'
+require 'helper/profile'
 class Helper
   include View
+  include Profile
+  
   def self.foo
     "foo"
   end
@@ -36,9 +39,10 @@ class Helper
     html.reverse_merge!(:class => 'thumbnail', :size => size, :title => "Link to #{profile.name}")
 
     if profile && profile.user
-      if profile.user && profile.user.photo && File.exists?(profile.user.photo)
+      if profile.user.photo && File.exists?(profile.user.photo.to_s)
         @user = profile.user
         if link
+          # Syntax: link_to(content, source, html_options)
           return link_to(image_tag(url_for_file_column("user", "photo", size), html), profile_path(profile) )
         else
           return image_tag(url_for_file_column("user", "photo", size), html)

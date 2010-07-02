@@ -29,7 +29,7 @@ describe "Helper" do
         @profile.stub!(:has_valid_photo?).and_return(true)
       end
       it "should return a link" do
-        @helper.display_photo(@profile, "100x100", {}, {}, true).should == "this link"
+        @helper.display_photo(@profile, "100x100", {}, {}, true).should == "<a href='/profiles/#{@profile.name}/'><img src='/assets/user/photo_100x100.png' class='thumbnail' size='100x100' title='Link to #{@profile.name}' /></a>"
       end
     end
     
@@ -43,8 +43,8 @@ describe "Helper" do
         @user.photo = @photo
         @profile.stub!(:has_valid_photo?).and_return(true)
       end
-      it "should just an image" do
-        @helper.display_photo(@profile, "100x100", {}, {}, false).should == "just image"
+      it "should return an image" do
+        @helper.display_photo(@profile, "100x100", {}, {}, false).should == "<img src='/assets/user/photo_100x100.png' class='thumbnail' size='100x100' title='Link to Clayton' />"
       end
     end
     
