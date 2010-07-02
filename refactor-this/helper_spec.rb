@@ -66,12 +66,12 @@ describe "Helper" do
         @profile.user = @user
         @profile.stub!(:has_valid_photo?).and_return(false)
       end
-      describe "With a rep user" do
+      describe "As a representative user" do
         before(:each) do
           @user.stub!(:rep?).and_return(true)
         end
         it "return a default link" do
-          @helper.display_photo(@profile, "100x100", {}, {}, true).should == "default link 190x119"
+          @helper.display_photo(@profile, "100x100", {}, {}, true).should == "<a href='/profiles/#{@profile.name}/'><img src='user190x119.jpg' /></a>"
         end
         
       end
