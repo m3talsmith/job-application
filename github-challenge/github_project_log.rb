@@ -38,15 +38,15 @@ commits = JSON.parse(response.read)["commits"].group_by {|commit| commit["id"]}
 html = "<html><head><title>Commit History for #{project} owned by #{user}</title></head><body>"
 
 html << "<h1>Commit History for #{project} owned by #{user}</h1>"
-html << "<div class='commits'"
+html << "<div class='commits'>"
 commits.each do |id, details|
   commit = details.first
   html << "<div class='author'>"
   html << "  <h2>#{commit['author']['name']} (#{commit['author']['login']})</h2>"
-  html << "  <div class='commit'>"
-  html << "    <div>Commit: <span class='id'>#{id}</span></div>"
-  html << "    <div class='message'>#{commit['message']}</div>"
-  html << "  </div>"
+  html << "  <ul class='commit'>"
+  html << "    <li>Commit: <span class='id'>#{id}</span><br />"
+  html << "    <span class='message'>#{commit['message']}</span></li>"
+  html << "  </ul>"
   html << "</div>"
 end
 html << "</div>"

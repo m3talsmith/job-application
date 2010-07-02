@@ -1,0 +1,11 @@
+h1. Summary
+
+This directory has a pdf copy of my resume. You can view "my online resume here.":http://m3talsmith.heroku.com
+
+As an established web applications developer with over 14 years of professional experience, Michael has focused on building applications for start ups, small businesses, and web services. He has used many technologies to accomplish this, ranging from Flash and Actionscript on the interface side, to using Ruby on Rails, python, PHP, or even Java on the server side.
+
+He is adept at setting up servers for deployments to run on, and hardening said servers against attacks.
+
+He has experience working in small teams or by himself, and is very comfortable leading and building teams for projects; and has done this remotely as well as on site.
+
+He has over 10 years of experience managing projects, from pitching the initial ideas, to hiring, leading, coding, documenting, and launching the finished product.
