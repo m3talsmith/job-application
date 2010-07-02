@@ -55,27 +55,13 @@ class Helper
     show_default_image ? default_photo(profile, size, {}, link) : ''
   end
 
-  def default_photo(profile, size, html={}, link = true)
-    if link
-      if profile.user
-        if profile.user.rep?
-          link_to(image_tag("user190x119.jpg", html), profile_path(profile) )
-        else
-          link_to(image_tag("user#{size}.jpg", html), profile_path(profile) )
-        end
-      else
-        link_to(image_tag("user#{size}.jpg", html), profile_path(profile) )
-      end
+  def default_photo(profile, size, html={}, options={}, link = true)
+    if profile.user && profile.user.rep?
+      image = image_tag("user190x119.jpg", html)
     else
-      if profile.user
-        if profile.user.rep?
-          image_tag("user190x119.jpg", html)
-        else
-          image_tag("user#{size}.jpg", html)
-        end
-      else
-        image_tag("user#{size}.jpg", html)
-      end
+      image = image_tag("user#{size}.jpg", html)
     end
+    
+    return link ? link_to(options[:show_default] ? image : profile.name, profile_path(profile)) : image
   end
 end

@@ -86,7 +86,7 @@ describe "Helper" do
       end
     end
     
-    describe "When the user doesn't have a photo and we don't want to display the default" do
+    describe "When the user doesn't have a photo and we don't want to display the default photo" do
       before(:each) do
         @profile = UserProfile.new
         @profile.name = "Clayton"
@@ -94,7 +94,7 @@ describe "Helper" do
         @profile.user = @user
         @profile.stub!(:has_valid_photo?).and_return(false)
       end
-      describe "With a rep user" do
+      describe "As a representative user" do
         before(:each) do
           @user.stub!(:rep?).and_return(true)
         end
@@ -104,7 +104,7 @@ describe "Helper" do
         
       end
       
-      describe "With a regular user" do
+      describe "As a regular user" do
         before(:each) do
           @user.stub!(:rep?).and_return(false)
         end
