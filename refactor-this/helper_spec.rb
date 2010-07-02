@@ -44,7 +44,7 @@ describe "Helper" do
         @profile.stub!(:has_valid_photo?).and_return(true)
       end
       it "should return an image" do
-        @helper.display_photo(@profile, "100x100", {}, {}, false).should == "<img src='/assets/user/photo_100x100.png' class='thumbnail' size='100x100' title='Link to Clayton' />"
+        @helper.display_photo(@profile, "100x100", {}, {}, false).should == "<img src='/assets/user/photo_100x100.png' class='thumbnail' size='100x100' title='Link to #{@profile.name}' />"
       end
     end
     
@@ -53,8 +53,8 @@ describe "Helper" do
         @profile = UserProfile.new
         @profile.name = "Clayton"
       end
-      it "return a default" do
-        @helper.display_photo(@profile, "100x100", {}, {}, true).should == "default link 100x100"
+      it "return a default image" do
+        @helper.display_photo(@profile, "100x100", {}, {}, true).should == "<a href='/profiles/#{@profile.name}/'><img src='user100x100.jpg' /></a>"
       end
     end
     
