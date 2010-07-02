@@ -1,4 +1,6 @@
+require 'helper/view'
 class Helper
+  include View
   def self.foo
     "foo"
   end

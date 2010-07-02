@@ -15,7 +15,7 @@ describe "Helper" do
   end
   describe "display_photo" do
     it "should return the wrench if there is no profile" do
-      @helper.display_photo(nil, "100x100", {}, {}, true).should == "wrench.png"
+      @helper.display_photo(nil, "100x100", {}, {}, true).should == "<img src='wrench.png' />"
     end
         
     describe "With a profile, user and photo requesting a link" do
